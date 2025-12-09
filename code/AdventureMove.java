@@ -1,32 +1,33 @@
 import java.util.Scanner;
 
 public class AdventureMove  {
-    public static void Move(int[][] grid, int pos, int posR, int posC, int cols, int rows) {
+    public static int[] Move(int[][] grid, int posR, int posC, int cols, int rows) {
     
 
-    // Movement Input Test
+    // Movement Input
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine().toUpperCase();
 
         switch (input) {
-            case "UP":
+            case "UP" -> {
                 if (posR > 0) posR--;
-                break;
-            case "DOWN":
+            }
+            case "DOWN" -> {
                 if (posR < rows - 1) posR++;
-                break;
-            case "LEFT":
+            }
+            case "LEFT" -> {
                 if (posC > 0) posC--;
-                break;
-            case "RIGHT":
+            }
+            case "RIGHT" -> {
                 if (posC < cols - 1) posC++;
-                break;
-            default:
-                System.out.println("Invalid command");
+            }
+            default -> System.out.println("Invalid command");
         }
 
-        pos = grid[posR][posC];
-        System.out.println(pos);
+        int pos = grid[posR][posC]; // to show the position and options
+        AdventureOptions.Options(pos);
+
+        return new int[]{posR,posC}; // tracking where the player is
 
     }
 }

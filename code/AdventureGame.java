@@ -1,31 +1,23 @@
+import java.util.Scanner;
+
+// cd onedrive\desktop\Adventure-Game-\code in the terminal to run 
 
 public class AdventureGame {
 
     public static void main(String[] args){
-        // Grid Dimensions
-        int rows = 5, cols = 5, posR = 0, posC = 0;
-        int[][] grid = new int[rows][cols];
 
-        int pos = grid[0][0];
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine().toUpperCase();
 
-        // Filling grid test
-        for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < cols; c++) {
-                grid[r][c] = (r) * cols + c + 1;
-            }
-        }
+        int posR = 0;
+        int posC = 0;
 
 
-
-        // Print the grid
-        for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < cols; c++) {
-                System.out.print(grid[r][c] + "\t");
-            }
-            System.out.println();
-        }
-
-       AdventureMove.Move(grid, pos, posR, posC, cols, rows);
-        
+        int[][] grid = AdventureGrid.createGrid();
+        do {
+            int[] newPos = AdventureMove.Move(grid, posR , posC, 5, 5);
+            posR = newPos[0];
+            posC = newPos[1];
+        }while(input.equals("GO"));
     }
 }

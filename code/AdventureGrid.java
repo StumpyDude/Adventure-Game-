@@ -1,19 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
 
-public class grid {
+
+public class AdventureGrid {
 
     // Grid Dimensions
-    int rows = 5, cols = 5, posR = 0, posC = 0;
-    int[][] grid = new int[rows][cols];
+    static int rows = 5;
+    static int cols = 5;
 
-    public static void createGrid() {
+    static int[][] grid = new int[5][5];
 
-        int pos = grid[0][0];
-
+    public static int[][] createGrid() {
+        
+        System.out.println("---------------");
         // Filling grid test
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
@@ -29,6 +27,10 @@ public class grid {
             }
             System.out.println();
         }
+        System.out.println("Grid Created");
+        System.out.println("Game Started starting at 1");
+        System.out.println("Input >> left, right, up, down");
 
+        return grid;
     }
 }
