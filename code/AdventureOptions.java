@@ -5,6 +5,8 @@ public class AdventureOptions {
             case 1 -> System.out.println("coin");
             case 2 -> System.out.println("house");
             case 3 -> System.out.println("path");
+            case 4 -> System.out.println("tree");
+            case 5 -> System.out.println("river");
             default -> {
             }
         }

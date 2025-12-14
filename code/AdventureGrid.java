@@ -4,10 +4,10 @@
 public class AdventureGrid {
 
     // Grid Dimensions
-    static int rows = 5;
-    static int cols = 5;
+    static int rows = 25;
+    static int cols = 25;
 
-    static int[][] grid = new int[5][5];
+    static int[][] grid = new int[25][25];
 
     public static int[][] createGrid() {
         
@@ -26,7 +26,7 @@ public class AdventureGrid {
                 System.out.print(grid[r][c] + "\t");
             }
             System.out.println();
-        }
+        } 
         System.out.println("Grid Created");
         System.out.println("Game Started starting at 1");
         System.out.println("Input >> left, right, up, down");

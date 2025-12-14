@@ -12,8 +12,15 @@ public class AdventureGame {
         int posR = 0;
         int posC = 0;
 
+        int[][] grid;
 
-        int[][] grid = AdventureGrid.createGrid();
+        if (input.equals("GO")){
+            grid = AdventureGrid.createGrid();
+        }else{
+            System.out.println("Type GO to start the game");
+            return;
+        }
+
         do {
             int[] newPos = AdventureMove.Move(grid, posR , posC, 5, 5);
             posR = newPos[0];
