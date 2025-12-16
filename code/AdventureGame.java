@@ -1,30 +1,37 @@
 import java.util.Scanner;
 
-// cd onedrive\desktop\Adventure-Game-\code in the terminal to run 
 
 public class AdventureGame {
 
     public static void main(String[] args){
 
+        
+
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine().toUpperCase();
 
         int posR = 0;
         int posC = 0;
 
         int[][] grid;
 
-        if (input.equals("GO")){
-            grid = AdventureGrid.createGrid();
-        }else{
-            System.out.println("Type GO to start the game");
-            return;
-        }
+        String check = "check";
+        do{
+            System.out.println("Type GO to start the game ");
+            System.out.print(">> ");
+            
+            String input = scanner.nextLine().toUpperCase();
+            if (input.equals("GO")){
+                grid = AdventureGrid.createGrid();
 
-        do {
-            int[] newPos = AdventureMove.Move(grid, posR , posC, 5, 5);
-            posR = newPos[0];
-            posC = newPos[1];
-        }while(input.equals("GO"));
+                do {
+                int[] newPos = AdventureMove.Move(grid, posR , posC, 18, 28);
+                posR = newPos[0];
+                posC = newPos[1];
+                }while(input.equals("GO"));
+
+            }else{
+                System.out.println("Type GO to start the game");
+            }  
+        }while(check.equals("check"));
     }
 }

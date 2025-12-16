@@ -9,22 +9,22 @@ public class AdventureMove  {
         String input = scanner.nextLine().toUpperCase();
 
         switch (input) {
-            case "UP" -> {
+            case "U" -> {
                 if (posR > 0) posR--;
             }
-            case "DOWN" -> {
+            case "D" -> {
                 if (posR < rows - 1) posR++;
             }
-            case "LEFT" -> {
+            case "L" -> {
                 if (posC == 0 && pos != 1){
-                    posC = 24;
+                    posC = 17;
                     posR--;
                 } else if (posC > 0) {
                     posC--;
                 }
             }
-            case "RIGHT" -> {
-                if(posC == 24 && pos != 625){
+            case "R" -> {
+                if(posC == 17 && pos != 504){
                     posC = 0;
                     posR++;
                 } else if (posC < cols - 1) {
